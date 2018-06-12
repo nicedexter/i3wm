@@ -161,9 +161,9 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 bindsym $mod+Shift+s exec systemctl suspend
-bindsym $mod+g exec google-chrome --disable-web-security --user-data-dir
-bindsym --release $mod+Shift+Print exec --no-startup-id import ~/Pictures/screenshot-`/bin/date +%Y%m%d-%H:%M:%S`.png
-bindsym --release $mod+Print exec --no-startup-id import -window root ~/Pictures/screenshot-`/bin/date +%Y%m%d-%H:%M:%S`.png
+bindsym $mod+g exec google-chrome --disable-web-security --user-data-dir=/tmp/chrome-debug --remote-debugging-port=9222
+bindsym --release $mod+Shift+p exec --no-startup-id import ~/Pictures/screenshot-`/bin/date +%Y%m%d-%H:%M:%S`.png
+bindsym --release $mod+p exec --no-startup-id import -window root ~/Pictures/screenshot-`/bin/date +%Y%m%d-%H:%M:%S`.png
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
