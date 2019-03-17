@@ -172,19 +172,8 @@ mode "resize" {
 }
 
 bar {
-    status_command i3status -c ~/.config/i3/i3status.conf
-    tray_output primary
-    colors {
-      background #000000
-      statusline #ffffff
-      separator #666666
-
-      focused_workspace  #333333 #000000 #ffffff
-      active_workspace   #333333 #5f676a #ffffff
-      inactive_workspace #333333 #222222 #888888
-      urgent_workspace   #2f343a #900000 #ffffff
-      binding_mode       #2f343a #900000 #ffffff
-   }
+	tray_output none
+        status_command  ~/.config/i3/bumblebee-status/bumblebee-status -m nic traffic disk load cpu memory battery date time pasink  caffeine bluetooth -p interval=2.5  nic.format="{ssid} {ip}" nic.exclude="lo,virbr,docker,vboxnet,veth,ether,enp0s31f6,br-3825c6156376" traffic.exclude="lo,virbr,docker,vboxnet,veth,ether,enp0s31f6,br-3825c6156376" traffic.showname="False" disk.format="{percent:05.02f}%" memory.format="{percent:05.02f}%" time.format="%H:%M" date.format="%Y/%m/%d" -t gruvbox-powerline
 }
 
 # Pulse Audio controls
@@ -211,7 +200,7 @@ client.placeholder #b0c4bb #2f2f38 #b0c4bb #688486 #688486
 client.background #2f2f38
 
 # Gaps
-gaps inner 8
+gaps inner 4
 gaps outer 4
 
 smart_gaps on
