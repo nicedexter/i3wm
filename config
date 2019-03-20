@@ -173,7 +173,7 @@ mode "resize" {
 
 bar {
 	tray_output none
-        status_command  ~/.config/i3/bumblebee-status/bumblebee-status -m nic traffic disk load cpu memory battery date time pasink  caffeine bluetooth -p interval=2.5  nic.format="{ssid} {ip}" nic.exclude="lo,virbr,docker,vboxnet,veth,ether,enp0s31f6,br-3825c6156376" traffic.exclude="lo,virbr,docker,vboxnet,veth,ether,enp0s31f6,br-3825c6156376" traffic.showname="False" disk.format="{percent:05.02f}%" memory.format="{percent:05.02f}%" time.format="%H:%M" date.format="%Y/%m/%d" -t gruvbox-powerline
+        status_command  ~/.config/i3/bumblebee-status/bumblebee-status -m nic traffic disk load cpu memory battery date time pasink  caffeine bluetooth -p interval=2.5  nic.format="{ssid} {ip}" nic.exclude="lo,virbr,docker,vboxnet,veth,ether,enp,br" traffic.exclude="lo,virbr,docker,vboxnet,veth,ether,enp,br" traffic.showname="False" disk.format="{percent:05.02f}%" memory.format="{percent:05.02f}%" time.format="%H:%M" date.format="%Y/%m/%d" -t gruvbox-powerline
 }
 
 # Pulse Audio controls
