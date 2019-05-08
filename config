@@ -7,7 +7,7 @@ exec --no-startup-id nm-applet
 # touchpad enable click
 exec xinput set-prop 13 311 1
 
-new_window pixel 1
+new_window pixel 0
 new_float normal
 
 hide_edge_borders none
@@ -172,7 +172,7 @@ mode "resize" {
 }
 
 bar {
-	tray_output none
+	tray_output primary
         status_command  ~/.config/i3/bumblebee-status/bumblebee-status -m nic traffic disk load cpu memory battery date time pasink  caffeine bluetooth -p interval=2.5  nic.format="{ssid} {ip}" nic.exclude="lo,virbr,docker,vboxnet,veth,ether,enp,br" traffic.exclude="lo,virbr,docker,vboxnet,veth,ether,enp,br" traffic.showname="False" disk.format="{percent:05.02f}%" memory.format="{percent:05.02f}%" time.format="%H:%M" date.format="%Y/%m/%d" -t gruvbox-powerline
 }
 
@@ -184,8 +184,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle
 
 
 # Screen brightness controls
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10 
-bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10 
+bindsym XF86MonBrightnessUp exec --no-startup-id  xrandr --output eDP-1 --brightness 1
+bindsym XF86MonBrightnessDown exec --no-startup-id  xrandr --output eDP-1 --brightness 0.4
 
 bindsym $mod+Shift+s exec systemctl suspend
 bindsym $mod+shift+v exec i3lock -d -c 000000
@@ -200,8 +200,8 @@ client.placeholder #b0c4bb #2f2f38 #b0c4bb #688486 #688486
 client.background #2f2f38
 
 # Gaps
-gaps inner 4
-gaps outer 4
+gaps inner 8
+gaps outer 0
 
 smart_gaps on
 
